@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Contact</title>
+	<link rel="stylesheet" href="css/basic.css">
+	<script type="text/javascript" src="js/global.js"></script>
+	<script type="text/javascript" src="js/contact.js"></script>
+</head>
+<body>
+	<div id="header"><img src="images/logo.gif" alt="band" /></div>
+	<div id="navigation">
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a href="photos.html">Photos</a></li>
+			<li><a href="live.html">Live</a></li>
+			<li><a href="contact.html">Contact</a></li>
+		</ul>
+	</div>
+	<div id="content">
+		<h1>Contact the band</h1>
+		<form method="post" action="#">
+			<fieldset>
+				<p>
+					<label for="name">Name:</label>
+					<input type="text" id="name" name="" value="Your" class="required">
+				</p>
+				<p>
+					<label for="email">Email:</label>
+					<input type="text" id="email" name="email" value="Your email address" class="email required">
+				</p>
+				<p>
+					<label for="message">Message:</label>
+					<textarea name="message" id="message" cols="45" rows="10" row="7" class="required">Write your message here:</textarea>
+				</p>
+				<input type="submit" value="send" />
+			</fieldset>
+		</form>
+	</div>
+</body>
+</html>
