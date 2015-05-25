@@ -2,27 +2,72 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Index</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- 	<link rel="stylesheet" href="css/layout.css"> -->
 	<link rel="stylesheet" href="css/basic.css">
-	<script type="text/javascript" src="js/global.js"></script>
-	<script type="text/javascript" src="js/home.js"></script>
+	<!-- <link rel="stylesheet" href="css/solar.css"> -->
+	<script src="lib/d3.min.js"></script>
+	<!-- <link rel="stylesheet" media="screen and (orientation:portrait)" href="css/layout.css">
+	<link rel="stylesheet" media="screen and (orientation:landscape)" href="css/landscape.css"> -->
+	<title>index</title>
+
 </head>
+
 <body>
-	<div id="header"><img src="images/logo.gif" alt="band" /></div>
-	<div id="navigation">
-		<ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="about.html">About</a></li>
-			<li><a href="photos.html">Photos</a></li>
-			<li><a href="live.html">Live</a></li>
-			<li><a href="contact.html">Contact</a></li>
-		</ul>
+<div id="wrapper">
+	<!-- the header and navigation -->
+	<div id="header">
+		<div id="icon">
+			<img src="image/profile.png" alt="profile image">
+		</div>
+		<div id="logo">
+			<span>郭不耐 d3.js/canvas</span>
+		</div>
+		<div id="navigation">
+			<ul>
+				<!-- <li><a href="index.html">主页&nbsp&nbsp&nbsp&nbsp</a></li>
+				<li><a href="works.html">&nbsp&nbsp&nbsp&nbsp作品&nbsp&nbsp&nbsp&nbsp</a></li>
+				<li><a href="about.html">&nbsp&nbsp&nbsp&nbsp简历&nbsp&nbsp&nbsp&nbsp</a></li>
+				<li><a href="contact.html">&nbsp&nbsp&nbsp&nbsp联系&nbsp&nbsp&nbsp&nbsp</a></li> -->
+
+				<li><a href="index.html">主页</a></li>
+				<li><a href="works.html">作品</a></li>
+				<li><a href="about.html">简历</a></li>
+				<li><a href="contact.html">联系</a></li>
+
+			</ul>
+		</div>
 	</div>
+	<!-- the content -->
 	<div id="content">
-		<h1>Welcome</h1>
-		<p id="intro">
-			 Attribute operators are used to modify attributes of outputted elements. <a href="about.html">About the band</a> For example, in HTML and XML you can quickly add class attribute to generated element. <a href="photos.html">Band Photos</a> In CSS, you use elem#id and class notation to reach the elements with specified id or class attributes. <a href="live.html">Tour date</a>In Emmet, you can use the very same syntax to add these attributes to specified element. <a href="contact.html">Get in touch</a>
-		</p>
+	<!-- 	<p>here is the content</p> -->
+		<div id="d3">
+		</div>
+		<!-- <a href="#">Welcome to my blog</a> -->
+		<!-- <img src="image/works/submarine.png" alt="sample image"> -->
 	</div>
+	<!-- the footer -->
+	<div id="footer">
+		<p>CopyRight@ 郭不耐 Since 2015</p>
+	</div>
+</div>
+
+<script>
+// 	d3.select("body")
+// 		.select("#d3")
+// 		.append("svg")
+// 		.attr("width", 800)
+// 		.attr("height", 600)
+// 		.attr("viewBox", "0,0,800,600")
+// 		.append("rect")
+// 		.attr("x", 50)
+// 		.attr("y", 50)
+// 		.attr("width", 700)
+// 		.attr("height", 500)
+// 		.attr("fill", "#666");
+</script>
+
+	<script src="js/d3.hexbin.v0.min.js"></script>
+	<script src="js/hexbin.js"></script>
 </body>
 </html>

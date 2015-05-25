@@ -1,0 +1,27 @@
+#contact{
+	list-style-type:none;
+	text-align: left;
+	margin-left:32%; 
+}
+
+#contact li{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-decoration: none;
+	vertical-align:middle;
+	font-family: "Microsoft YaHei", "Lucida Grande", sans-serif;
+	font-size: 1.2em;
+	color: #808080;
+}
+
+#contact li a{
+	text-decoration: none;
+	vertical-align:middle;
+	font-family: "Microsoft YaHei", "Lucida Grande", sans-serif;
+	/*font-size: 1.2em;*/
+	color: #808080;
+}
+
+#contact img{
+	vertical-align:middle;
+}

@@ -1,0 +1,25 @@
+#profile{
+	float: left;
+	text-align: left;
+	margin-left:6%; 
+	margin-top: 0;
+	padding-top: 0;
+	/*margin-top:50px; */
+	font-family: "Microsoft YaHei", "Lucida Grande", sans-serif;
+	font-size: 1em;
+	color: #808080;
+}
+
+#myprofile{
+	line-height: 2em;
+}
+
+#skill{
+	margin-top:20px;
+	margin-bottom:40px;
+	padding-top: 25px;
+}
+
+#skill img{
+	vertical-align:bottom;
+}
