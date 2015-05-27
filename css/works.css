@@ -1,6 +1,20 @@
 .work img {
-	-ms-box-shadow: 3px 3px 3px #ccc;
-	-moz-box-shadow: 3px 3px 3px #ccc;
-	-webkit-box-shadow: 3px 3px 3px #ccc;
-	box-shadow: 3px 3px 3px #ccc;
+	-ms-box-shadow: 1px 2px 7px #ccc;
+	-moz-box-shadow: 1px 2px 7px #ccc;
+	-webkit-box-shadow: 1px 2px 7px #ccc;
+	box-shadow: 1px 2px 7px #ccc;
+}
+
+.workLeft{
+	float: left;
+	-ms-box-shadow: 1px 2px 7px #ccc;
+	-moz-box-shadow: 1px 2px 7px #ccc;
+	-webkit-box-shadow: 1px 2px 7px #ccc;
+	box-shadow: 1px 2px 7px #ccc;
+}
+
+.works {
+	clear:both;
+	margin-top: 40px;
+	margin-left: 7%;
 }

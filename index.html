@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- 	<link rel="stylesheet" href="css/layout.css"> -->
 	<link rel="stylesheet" href="css/basic.css">
+	<link rel="stylesheet" href="css/columnal.css">
 	<!-- <link rel="stylesheet" href="css/solar.css"> -->
 	<script src="lib/d3.min.js"></script>
 	<!-- <link rel="stylesheet" media="screen and (orientation:portrait)" href="css/layout.css">
@@ -14,40 +15,34 @@
 </head>
 
 <body>
-<div id="wrapper">
+<div id="wrapper" class="container">
 	<!-- the header and navigation -->
-	<div id="header">
-		<div id="icon">
+	<div id="header" class="row">
+		<div id="icon" class="col_12">
 			<img src="image/profile.png" alt="profile image">
 		</div>
-		<div id="logo">
+		<div id="logo" class="col_12">
 			<span>郭不耐 d3.js/canvas</span>
 		</div>
-		<div id="navigation">
+		<div id="navigation" class="row">
 			<ul>
-				<!-- <li><a href="index.html">主页&nbsp&nbsp&nbsp&nbsp</a></li>
-				<li><a href="works.html">&nbsp&nbsp&nbsp&nbsp作品&nbsp&nbsp&nbsp&nbsp</a></li>
-				<li><a href="about.html">&nbsp&nbsp&nbsp&nbsp简历&nbsp&nbsp&nbsp&nbsp</a></li>
-				<li><a href="contact.html">&nbsp&nbsp&nbsp&nbsp联系&nbsp&nbsp&nbsp&nbsp</a></li> -->
-
 				<li><a href="index.html">主页</a></li>
 				<li><a href="works.html">作品</a></li>
 				<li><a href="about.html">简历</a></li>
 				<li><a href="contact.html">联系</a></li>
-
 			</ul>
 		</div>
 	</div>
 	<!-- the content -->
-	<div id="content">
+	<div id="content" class="row">
 	<!-- 	<p>here is the content</p> -->
-		<div id="d3">
+		<div id="d3" class="col_12">
 		</div>
 		<!-- <a href="#">Welcome to my blog</a> -->
 		<!-- <img src="image/works/submarine.png" alt="sample image"> -->
 	</div>
 	<!-- the footer -->
-	<div id="footer">
+	<div id="footer" class="row">
 		<p>CopyRight@ 郭不耐 Since 2015</p>
 	</div>
 </div>

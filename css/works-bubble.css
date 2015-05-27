@@ -1,0 +1,39 @@
+.axis path, .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font: 10px sans-serif;
+}
+
+.axis .grid-line{
+    stroke: black;
+    shape-rendering: crispEdges;
+    stroke-opacity: .2;
+}
+
+.bubble{
+    fill-opacity: .5;
+}
+
+.label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+}
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 100px;
+    height: 40px;
+    padding: 10px;
+    font: 12px sans-serif;
+    color: #fff;
+    background: #000;
+    border: 0px;
+    border-radius: 4px;
+    pointer-events: none;
+}

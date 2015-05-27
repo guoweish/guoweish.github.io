@@ -29,7 +29,6 @@ body {
 	width: 100%;
 	padding-top: 20px;
 	padding-bottom: 10px;
-	margin-bottom: 20px;
 	text-align: center;
 	font-size: 2.2em;
 	font-weight:bold;
@@ -38,7 +37,7 @@ body {
 
 #navigation {
 	width: 100%;
-	/*padding-top: 5px;
+/*	padding-top: 5px;
 	padding-bottom: 5px;*/
 	height: 4em;
 	line-height: 4em;
@@ -61,11 +60,6 @@ body {
 	font-size: 1.2em;
 	font-weight:bold;
 	color: #fff;
-}
-
-#navigation ul li a:hover {
-	color: #000;
-	text-shadow: 0px 1px white;
 }
 
 #content {
@@ -107,24 +101,9 @@ img, svg, object, video, embed {
   stroke-width: .5px;
 }
 
-/*to draw shadow for works thumbsnail*/
 #content img {
 	-ms-box-shadow: 1px 2px 7px #ccc;
 	-moz-box-shadow: 1px 2px 7px #ccc;
 	-webkit-box-shadow: 1px 2px 7px #ccc;
 	box-shadow: 1px 2px 7px #ccc;
-}
-
-.work img {
-	-ms-box-shadow: 1px 2px 7px #ccc;
-	-moz-box-shadow: 1px 2px 7px #ccc;
-	-webkit-box-shadow: 1px 2px 7px #ccc;
-	box-shadow: 1px 2px 7px #ccc;
-}
-
-.work img:hover {
-	-ms-box-shadow: 3px 4px 7px #ccc;
-	-moz-box-shadow: 3px 4px 7px #ccc;
-	-webkit-box-shadow: 3px 4px 7px #ccc;
-	box-shadow: 3px 4px 7px #ccc;
 }

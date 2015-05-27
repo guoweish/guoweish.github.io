@@ -4,23 +4,23 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="css/basic.css">
-	<link rel="stylesheet" href="css/about.css">
-	<script src="lib/d3.min.js"></script>
-	<title>index</title>
+	<link rel="stylesheet" href="css/columnal.css">
+	<!-- <link rel="stylesheet" href="css/about.css"> -->
+	<title>郭不耐的简历</title>
 
 </head>
 
 <body>
-<div id="wrapper">
+<div id="wrapper" class="container">
 	<!-- the header and navigation -->
-	<div id="header">
-		<div id="icon">
+	<div id="header" class="row">
+		<div id="icon" class="col_12">
 			<img src="image/profile.png" alt="profile image">
 		</div>
-		<div id="logo">
+		<div id="logo" class="col_12">
 			<span>郭不耐 d3.js/canvas</span>
 		</div>
-		<div id="navigation">
+		<div id="navigation" class="row">
 			<ul>
 				<li><a href="index.html">主页</a></li>
 				<li><a href="works.html">作品</a></li>
@@ -30,8 +30,8 @@
 		</div>
 	</div>
 	<!-- the content -->
-	<div id="content">
-		<div id="profile">
+	<div id="content" class="row">
+		<div id="profile" class="col_6 clearleft">
 			<p id="myprofile">	
 				数据可视化爱好者<br>
 				精通d3.js互动图表设计<br>
@@ -40,12 +40,12 @@
 				热爱手冲咖啡<br>
 			</p>
 		</div>
-		<div id="skill">
+		<div id="skill" class="col_6 omega">
 			<img src="image/skill.png" alt="">
 		</div>
 	</div>
 	<!-- the footer -->
-	<div id="footer">
+	<div id="footer" class="row">
 		<p>CopyRight@ 郭不耐 Since 2015</p>
 	</div>
 </div>
