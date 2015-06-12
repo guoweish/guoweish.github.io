@@ -60,11 +60,11 @@ var width = 1000,
         })
         .call(yAxis);
 
-    svg.append("g")
-    	.append("text")
-    	.text("2014年全国各省乘用车上牌量比较")
-    	.attr("x", 15)
-    	.attr("y", 20);
+    // svg.append("g")
+    // 	.append("text")
+    // 	.text("2014年全国各省乘用车上牌量比较")
+    // 	.attr("x", 15)
+    // 	.attr("y", 20);
 
 	d3.json("data/works-bubble.json", function (data) {
 		svg.selectAll("text.label")

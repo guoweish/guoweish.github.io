@@ -48,6 +48,13 @@ var svg = d3.select("body")
 	    .append("g")
 	    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+//====loading logo=========================================
+svg.append("text")
+	.attr("id", "loading")
+	.attr("x", width / 2)
+	.attr("y", height / 2)
+	.text("Loading......");
+
 d3.csv("data/ChinaBudget-full.csv", function(error, data) {
     
     _.each(data, function(element, index, list){
@@ -247,7 +254,10 @@ d3.csv("data/ChinaBudget-full.csv", function(error, data) {
 		    d.y0 = d.y;
 	    });
 	}
-//********
+
+	//to remove the loading state words
+	d3.select("#loading").remove();
+	//********
 
 	function collapse(d) {
 	    if (d.children) {

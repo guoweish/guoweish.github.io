@@ -8,9 +8,14 @@
     <title>郭不耐－数据可视化－d3.js</title>
     <link rel="icon" type="image/png" href="image/favicon.png">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/works-tree.css">
+    <script src="lib/d3.min.js"></script>
+    <script src="lib/underscore-min.js"></script>
 </head>
 
 <body>
+
+
     <div class="container">
         <div class="site main">
             <div class="vcard header g960">
@@ -19,30 +24,28 @@
                 <div class="nav">
                     <a class="extra g160" href="index.html" id="selected">WORK</a>
                     <!--<a class="extra g160" href="/blog">blog</a>-->
-                    <a class="extra g160" href="about.html">ABOUT</a>
+                    <a class="extra g160" href="about.html" >ABOUT</a>
                 </div>
             </div>
             <div class="clear">&nbsp;</div>
             <div>
-                <div id="home">
-                    <ul>    
-                    
-
-                    <a class="workthumb g320" href="work-mobile.html"><img src="image/work/work-mobile.png"><div class="workname">Mobile telephone subscriptions</div><div class="worktype">Tool: d3.js</div></a>
-                    
-                    <a class="workthumb g320" href="work-tree.html"><img src="image/work/work-tree.jpg"><div class="workname">China Government Budget 2015</div><div class="worktype">Tool: d3.js</div></a>
-
-                    <a class="workthumb g320" href="work-stock.html"><img src="image/work/work-stock.jpg"><div class="workname">China's stock market</div><div class="worktype">Tool: d3.js</div></a>
-
-                    <a class="workthumb g320" href="work-bubble.html"><img src="image/work/work-bubble.jpg"><div class="workname">Inside China's booming car market</div><div class="worktype">Tool: d3.js</div></a>
-
-                    <a class="workthumb g320" href="work-arc.html"><img src="image/work/work-arc.jpg"><div class="workname">Arc diagram</div><div class="worktype">Tool: d3.js</div></a>
-
-                    <a class="workthumb g320" href="http://www.annaflagg.com/work/superweeds"><img src="image/sample.png"><div class="workname">The Rise of the Superweeds</div><div class="worktype">Personal</div></a>
-                    </ul>
+                <div class="post g160 meta">Tool: d3.js<br>Type: Tree</div>
+                <div class="post title g640">
+                    <h1>China Government Budget 2015</h1>
+                </div>
+                <div class="post g640 ml160">
+                    China's defense budget rised by about 10 percent in 2015.</p>
+                    <div class="photolabel" id="d3">
+                        <!-- <div id="tooltip" class="tooltip" style="opacity:0;">
+                            <div id="head" class="header"></div>
+                            <div id="header1" class="header1"></div>
+                            <div id="budget" class="header4"></div>
+                        </div> -->
+                    </div>
                 </div>
             </div>
             <div class="clear">&nbsp;</div>
+            <!-- footer =================================================== -->
             <div class="footer g960">
                 <div class="copyright">
                     <p>
@@ -66,5 +69,12 @@
             </div>
         </div>
     </div> <!-- /container -->
+    <!-- <script src="js/works-tree.js"></script> -->
+        <div id="tooltip" class="tooltip" style="opacity:0;">
+                            <div id="head" class="header"></div>
+                            <div id="header1" class="header1"></div>
+                            <div id="budget" class="header4"></div>
+                        </div>
+    <script src="js/works-tree.js"></script>
 </body>
 </html>

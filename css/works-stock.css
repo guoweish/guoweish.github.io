@@ -1,11 +1,7 @@
-body {
-			margin: 0;
-			padding: 0;
-		}		
 
 		div.tooltip {
 		    position: absolute;
-		    width: 180px;
+		    width: 160px;
 		    height: auto;
 		    padding: 10px;
 		    font-family: SimHei, STHeiti, Arial, sans-serif;

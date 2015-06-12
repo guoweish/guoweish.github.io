@@ -127,7 +127,7 @@ var width = 950,
 						+ "涨跌: " + d.priceChange
 						+ "</div>"
 						+ "<div class='tooltipGadget box'>"
-						+ "<img src=image/works/works-stock/box" + iconType + ".svg></div>"
+						+ "<img src=image/work/work-stock/box" + iconType + ".svg></div>"
 					)
 					.style("left", (d3.event.pageX) + "px")
 					.style("top", (d3.event.pageY - 20) + "px");
@@ -149,14 +149,14 @@ var width = 950,
 	        .call(yAxis);
 
 		//title for diagrame
-		svg.append("g")       
-	        .attr("id", "title")
-	        .attr("transform", function(){ 
-	            return "translate(115, 50)";
-	        })
-	        .append("text")
-	        .attr("class", "title")
-	        .text("中国股市晴雨表：2005-2014");
+		// svg.append("g")       
+	 //        .attr("id", "title")
+	 //        .attr("transform", function(){ 
+	 //            return "translate(115, 50)";
+	 //        })
+	 //        .append("text")
+	 //        .attr("class", "title")
+	 //        .text("中国股市晴雨表：2005-2014");
 
 	    //footnote of data source
 	    svg.append("g")       
