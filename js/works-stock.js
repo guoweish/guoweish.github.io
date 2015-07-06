@@ -39,10 +39,9 @@ var width = 950,
         // .orient("right")
         // .tickFormat(customTimeFormat);
 
-		var colorScale = d3.scale.linear()
+		var colorScale = d3.scale.quantile()
 				.domain([-80, -50, -0.01, 0, 0.01, 50, 80])
-				.range(["#2E7026", "#61BC47", "#D6E9C9", "#ccc", "#FCC8BA", "#ED1B36", "#8B0013"])
-				.clamp(true);
+				.range(["#03784E", "#8EC63F", "#D8DF20", "#ccc", "#FBB383", "#F14D31", "#C41228"]);
 
 		//tooltip to display quote and candle
 		var tooltip = d3.select("body")
@@ -53,7 +52,7 @@ var width = 950,
 		var dataLegend = [0, 1, 2, 3, 4, 5, 6];
 
 		var colorScaleLegend = d3.scale.ordinal()
-				.range(["#2E7026", "#61BC47", "#D6E9C9", "#ccc", "#FCC8BA", "#ED1B36", "#8B0013"]);
+				.range(["#03784E", "#8EC63F", "#D8DF20", "#ccc", "#FBB383", "#F14D31", "#C41228"]);
 
 		//diagram container
 		var svg = d3.select("body")
