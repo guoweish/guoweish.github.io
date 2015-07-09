@@ -19,9 +19,12 @@ var departmentWidthScale = d3.scale.linear()
 		.range([5,10, 20, 50]);
 
 var colorScale = d3.scale.linear()
+		.interpolate(d3.interpolateHsl)
 		.clamp(true)
-		.domain([8,300, 500, 6000])
-		.range(["#BA1E20", "#F79324", "#C3D181", "#38A1D6"]);
+		.domain([8, 500, 2000])
+		.range(['#9C071B', '#FEC70B', '#016B6B']);
+/*		.domain([8,300, 500, 6000])
+		.range(["#BA1E20", "#F79324", "#C3D181", "#38A1D6"]);*/
 
 //number format
 var formatNumber = d3.format(".2f");
