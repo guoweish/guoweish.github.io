@@ -39,31 +39,60 @@
 .mcd-marker-cluster-large div {
 	background-color: rgba(11, 100, 182, 0.6);
 	}
+
+/*setting for jiuye==================================*/
+.geo_24-marker-cluster-small {
+	background-color: rgba(45, 158, 197, 0.6);
+}
 .geo_24-marker-cluster-small div {
 	background-color: rgba(45, 158, 197, 0.6);
 }
+.geo_24-marker-cluster-medium {
+	background-color: rgba(22, 137, 185, 0.6);
+}
 .geo_24-marker-cluster-medium div {
 	background-color: rgba(22, 137, 185, 0.6);
+}
+.geo_24-marker-cluster-large {
+	background-color: rgba(18, 116, 185, 0.6);
 }
 .geo_24-marker-cluster-large div {
 	background-color: rgba(18, 116, 185, 0.6);
 }
 
+.geo_48-marker-cluster-small {
+	background-color: rgba(117, 208, 66, 0.6);
+}
 .geo_48-marker-cluster-small div {
 	background-color: rgba(117, 208, 66, 0.6);
 }
+.geo_48-marker-cluster-medium {
+	background-color: rgba(98, 186, 78, 0.6);
+}
 .geo_48-marker-cluster-medium div {
 	background-color: rgba(98, 186, 78, 0.6);
+}
+.geo_48-marker-cluster-large {
+	background-color: rgba(29, 175, 118, 0.6);
 }
 .geo_48-marker-cluster-large div {
 	background-color: rgba(29, 175, 118, 0.6);
 }
 
+.geo_72-marker-cluster-small {
+	background-color: rgba(252, 198, 49, 0.6);
+}
 .geo_72-marker-cluster-small div {
 	background-color: rgba(252, 198, 49, 0.6);
 }
+.geo_72-marker-cluster-medium {
+	background-color: rgba(250, 189, 49, 0.6);
+}
 .geo_72-marker-cluster-medium div {
 	background-color: rgba(250, 189, 49, 0.6);
+}
+.geo_72-marker-cluster-large {
+	background-color: rgba(242, 130, 49, 0.6);
 }
 .geo_72-marker-cluster-large div {
 	background-color: rgba(242, 130, 49, 0.6);
