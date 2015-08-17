@@ -48,6 +48,7 @@
                 var markersKfc = defineCluster('geo_24-marker-cluster-');
                 var markersMcd = defineCluster('geo_48-marker-cluster-');
                 var markers_geo_72 = defineCluster('geo_72-marker-cluster-');
+                console.log(markers_geo_72);
 
                 kfc.forEach(function(d) {
                     defineMarker(d, markersKfc, geo_24_icon);
@@ -57,6 +58,7 @@
                 });
                 geo_72.forEach(function(d) {
                     defineMarker(d, markers_geo_72, geo_72_icon);
+                    // console.log(d);
                 });
 
                 map.addLayer(markersKfc);

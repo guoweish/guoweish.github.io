@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>上海九曳物流全国宅配覆盖率</title>
+        <script src = "lib/d3.min.js"></script>
+        <script src = "lib/queue.min.js"></script>
+        <script src = "lib/leaflet/leaflet.js"></script>
+        <script src = "lib/leafletMarkerCluster/leaflet.markercluster-src.js"></script>
+        <link rel="stylesheet" href="lib/leaflet/leaflet.css">
+        <link rel="stylesheet" href="lib/leafletMarkerCluster/MarkerCluster.Default.css">
+        <link rel="stylesheet" href="lib/leafletMarkerCluster/MarkerCluster.css">
+        <link rel="stylesheet" href="css/jiuye-MarkerCluster.css">
+        <style media="screen">
+            #map {
+                height: 700px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="map"></div>
+        <script type="text/javascript">
+        // 设置osm参数
+        var viewCenter = [34.277799897831,108.9530982792];
+        var mapScale = 5;
+        var mapStyle = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png';
+        var mapAttribution = '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors';
+        // 创建地图
+        var map = L.map('map').setView(viewCenter, mapScale);
+            L.tileLayer(mapStyle, {attribution: mapAttribution }).addTo(map);
+
+        // 载入数据
+        d3.csv('data/jiuye/geo_province.csv', function(data) {
+            // 自定义图标
+            var LeafIcon = L.Icon.extend({
+                    options: {
+                        iconSize:     [30, 40],
+                        iconAnchor:   [15, 20],
+                        popupAnchor:  [0, -30]
+                    }
+                });
+            var iconSet = [];
+            iconSet[24] = new LeafIcon({iconUrl: 'image/work/jiuye/geo_24.png'});
+            iconSet[48] = new LeafIcon({iconUrl: 'image/work/jiuye/geo_48.png'});
+            iconSet[72] = new LeafIcon({iconUrl: 'image/work/jiuye/geo_72.png'});
+            // var geo_24_icon = new LeafIcon({iconUrl: 'image/work/jiuye/geo_24.png'});
+            // var geo_48_icon = new LeafIcon({iconUrl: 'image/work/jiuye/geo_48.png'});
+            // var geo_72_icon = new LeafIcon({iconUrl: 'image/work/jiuye/geo_72.png'});
+            //以省份为索引，折叠数据
+            var nestData = d3.nest()
+                .key(function(d) { return d.province; })
+                .entries(data);
+
+            var markersClusters = [];
+
+            function defineCluster(clusterCss) {
+                var clusterObj = {};
+                clusterObj.maxClusterRadius = 100;
+                clusterObj.iconCreateFunction = function (cluster) {
+                    var childCount = cluster.getChildCount();
+
+                    var c = clusterCss;
+                    if (childCount < 10) {
+                        c += 'small';
+                    } else if (childCount < 70) {
+                        c += 'medium';
+                    } else {
+                        c += 'large';
+                    }
+
+                    return new L.DivIcon({ html: '<div><span>' + childCount + '</span></div>', className:'marker-cluster ' + c, iconSize: new L.Point(40, 40) });
+                }
+
+                return L.markerClusterGroup(clusterObj);
+            }
+            //定义单个标点函数
+            function defineMarker(d, cluster, markerIcon) {
+                var title = d.fullAddr + '<br>' + '配送时效：' + d.time + '小时';
+                var marker = L.marker(new L.LatLng(d.lat, d.lng), { title: title,  icon: markerIcon});
+                
+                marker.bindPopup(title);
+                cluster.addLayer(marker);
+            }
+
+            nestData.forEach(function(d, i) {
+                // console.log(d.key);
+                // console.log(d.values);
+                // 定义每组的坐标组
+                markersClusters[i] = defineCluster('geo_24-marker-cluster-');
+                // console.log(markersClusters[i]);
+                d.values.forEach(function(k) {
+                    // console.log(k.time);
+                    // 根据坐标类型选择图片
+                    var iconPath = iconSet[k.time];
+                    // console.log(k);
+                    // 定义每个坐标
+                    defineMarker(k, markersClusters[i], iconPath);
+                });
+                // 添加一组坐标
+                map.addLayer(markersClusters[i]);
+            });
+
+            //创建分组函数
+            
+        });
+
+
+        // var viewCenter = [34.277799897831,108.9530982792];
+        // var mapScale = 5;
+        // var mapStyle = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png';
+        // var mapAttribution = '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors';
+
+        // var map = L.map('map').setView(viewCenter, mapScale);
+        //     L.tileLayer(mapStyle, {attribution: mapAttribution }).addTo(map);
+
+        // queue()
+        // 	.defer(d3.csv, 'data/jiuye/geo_24.csv')
+        // 	.defer(d3.csv, 'data/jiuye/geo_48.csv')
+        //     .defer(d3.csv, 'data/jiuye/geo_72.csv')
+        // 	.await(function(error, kfc, mcd, geo_72) {
+        //         var LeafIcon = L.Icon.extend({
+        //             options: {
+        //                 iconSize:     [30, 40],
+        //                 iconAnchor:   [15, 20],
+        //                 popupAnchor:  [0, -40]
+        //             }
+        //         });
+        //         var geo_24_icon = new LeafIcon({iconUrl: 'image/work/jiuye/geo_24.png'});
+        //         var geo_48_icon = new LeafIcon({iconUrl: 'image/work/jiuye/geo_48.png'});
+        //         var geo_72_icon = new LeafIcon({iconUrl: 'image/work/jiuye/geo_72.png'});
+
+        //         var markersKfc = defineCluster('geo_24-marker-cluster-');
+        //         var markersMcd = defineCluster('geo_48-marker-cluster-');
+        //         var markers_geo_72 = defineCluster('geo_72-marker-cluster-');
+
+        //         kfc.forEach(function(d) {
+        //             defineMarker(d, markersKfc, geo_24_icon);
+        //             console.log(d);
+        //         });
+        //         mcd.forEach(function(d) {
+        //             defineMarker(d, markersMcd, geo_48_icon);
+        //         });
+        //         geo_72.forEach(function(d) {
+        //             defineMarker(d, markers_geo_72, geo_72_icon);
+        //         });
+
+        //         map.addLayer(markersKfc);
+        //         map.addLayer(markersMcd);
+        //         map.addLayer(markers_geo_72);
+
+        //         function defineCluster(clusterCss) {
+        //             var clusterObj = {};
+        //             clusterObj.maxClusterRadius = 100;
+        //             clusterObj.iconCreateFunction = function (cluster) {
+        //                 var childCount = cluster.getChildCount();
+
+        //                 var c = clusterCss;
+        //                 if (childCount < 10) {
+        //                     c += 'small';
+        //                 } else if (childCount < 70) {
+        //                     c += 'medium';
+        //                 } else {
+        //                     c += 'large';
+        //                 }
+
+        //                 return new L.DivIcon({ html: '<div><span>' + childCount + '</span></div>', className:'marker-cluster ' + c, iconSize: new L.Point(40, 40) });
+        //             }
+
+        //             return L.markerClusterGroup(clusterObj);
+        //         }
+
+        //         function defineMarker(d, cluster, markerIcon) {
+        //             var title = d.fullAddr + '<br>' + '配送时效：' + d.time + '小时';
+        //             var marker = L.marker(new L.LatLng(d.lat, d.lng), { title: title,  icon: markerIcon});
+                    
+        //             marker.bindPopup(title);
+        //             cluster.addLayer(marker);
+        //         }
+                
+        // 	});
+        </script>
+    </body>
+</html>
