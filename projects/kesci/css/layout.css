@@ -1,0 +1,316 @@
+html {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: 'Microsoft Yahei', Arial, sans-serif;
+	font-size: 11px;
+	line-height: 18px;
+	color: #222;
+	overflow: hidden;
+}
+/*=======top menu=====================*/
+#menu {
+	height: 39px;
+	padding: 10px 0;
+	background: #312e2e;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	box-shadow: 0 0 3px #666666;
+	behavior: url(PIE.htc);
+	z-index: 2;
+	border-bottom: 1px solid #222222;
+	min-width: 900px;
+}
+
+#menu #logo {
+	float: left;
+	margin-left: 10px;
+}
+
+#menubuttons {
+	float: left;
+	height: 30px;
+	padding: 5px 0 5px 165px;
+}
+
+#menubuttons .button {
+	background-color: #f5f5f5;
+	color: #222;
+	text-shadow:none;
+}
+
+#menubuttons .button.toggled {
+	background-color: #729ba3;
+	color: #fff;
+	text-shadow:0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.button.secondary,
+#menubuttons .button.secondary {
+	background-color: #444;
+	color: #ccc;
+}
+
+.button.secondary:not([disabled='disabled']):hover,
+#menubuttons .button.secondary:not([disabled='disabled']):hover {
+	background-color: #555;
+}
+
+#userbox, #langbox {
+	padding: 5px 0;
+	margin-right: 10px;
+}
+
+.slidemenu {
+	float: right;
+	height: 30px;
+}
+
+/*=======map content page=====================*/
+#mappage {
+	z-index: 1;
+}
+.page {
+	margin-top: 60px;
+	display: none;
+}
+
+/*=======map navigation=====================*/
+.navigation {
+	float: left;
+	width: 350px;
+	height: 100%;
+	overflow-y: hidden;
+	overflow-x: hidden;
+	background-color: #eeefef;
+	color: #ccc;
+	position: relative;
+	box-shadow: 0 0 3px #666;
+	behavior: url(PIE.htc);
+	z-index: 3;
+}
+
+/*=======navigation header=====================*/
+#mapnavigation #header {
+	display: block;
+	padding: 18px 0 18px 20px;
+	margin: 0;
+}
+
+#mapnavigation #header DIV.stopInput {
+	clear: both;
+	position: relative;
+}
+
+#scroller {
+	margin-bottom: 50px;
+}
+
+input[type=password],
+input[type=text] {
+	height: 21px;
+	width: 298px;
+	padding: 1px 5px 2px 5px;
+	color: #333;
+	font-family: 'Microsoft Yahei', Arial, sans-serif;
+	font-size: 12px;
+	margin: 2px 0;
+	z-index: 2;
+	border-radius: 2px;
+	border: 1px solid #ddd;
+	behavior: url(PIE.htc);
+}
+
+button#reverse {
+	border: 0;
+	width: 29px;
+	height: 8px;
+	float: left;
+	border-radius: 2px;
+	clear: both;
+	background-color: #729ba3;
+	background-image: url('../image/reverse.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+a#adddestination {
+	text-decoration: none;
+	color: #729ba3;
+	margin-top: 6px;
+	display: block;
+	float: left;
+}
+a#adddestination:hover {
+	text-decoration: underline;
+}
+
+#mapnavigation #header #search {
+	float: right;
+	margin: 5px 21px;
+}
+
+.button {
+	cursor: pointer;
+	line-height: 14px;
+	display: inline-block;
+	height: 16px;
+	color: #fff;
+	padding: 5px 10px;
+	border-radius: 2px;
+	behavior: url(PIE.htc);
+	font-size: 13px;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+	white-space: nowrap;
+	margin: 0;
+	font-weight: 500;
+	text-decoration: none;
+	background-color: #729ba3;
+}
+
+.button .icon {
+	margin-right: 6px;
+	font-size: 14px;
+	margin-top: 1px;
+	float: left;
+}
+
+/*=======navigation panel=====================*/
+#mapnavigation #tabs {
+	width: 310px;
+	height: 90px;
+	margin-top: 45px;
+}
+
+#mapnavigation #tabs .btn {
+	width: 103px;
+	height: 27px;
+	border: 0;
+	display: block;
+	float: left;
+	margin-right: 0;
+	font-size: 11px;
+	font-family: 'Microsoft Yahei', Arial, sans-serif;
+	color: #fff;
+	text-align: left;
+	padding-left: 10px;
+	background: #729ba3;
+}
+
+#mapnavigation #tabs .btn.active:hover,
+#mapnavigation #tabs .btn.active {
+	background: #fff;
+	border: 0;
+	color: #222;
+}
+
+#mapnavigation #tabs .btn:active,
+#mapnavigation #tabs .btn:hover {
+	background: #82abb3;
+	border: 0;
+}
+
+#mapnavigation #tabs .btn-group > .btn:first-child {
+	width: 104px;
+	margin-left: 0;
+}
+
+#mapnavigation #tabs .btn-group > .btn:last-child {
+	margin-right: 0;
+}
+
+#mapnavigation #tabs #options {
+	width: 290px;
+	height: 65px;
+	clear: both;
+	padding: 4px 10px 0 10px;
+	background: #fff;
+}
+
+/*=======stats=====================*/
+#mapnavigation #stats {
+	padding-top: 8px;
+	height: 55px;
+}
+
+#mapnavigation #stats #bartext,
+#mapnavigation #stats #extratext {
+	width: 185px;
+	height: 35px;
+	display: block;
+	float: left;
+}
+
+#mapnavigation #stats #extratext {
+	width: 104px;
+}
+
+#mapnavigation #stats #bartext .text,
+#mapnavigation #stats #extratext .text {
+	width: 100%;
+	height: 13px;
+	float: left;
+	clear: both;
+	display: block;
+	color: #999;
+	padding-bottom: 2px;
+}
+
+/*=======navigation copy=====================*/
+#mapnavigation #copy {
+	position: absolute;
+	width: 320px;
+	height: 30px;
+	padding: 6px 15px;
+	bottom: 0;
+	background: #CCCCCC;
+	color: #666666;
+	font-size: 10px;
+	line-height: 16px;
+	z-index: 2
+}
+
+.sidebarlink {
+	display: inline-block;
+	text-decoration: none;
+	margin-left: 9px;
+	color: #444;
+	padding: 0 3px;
+	border-radius: 2px;
+}
+
+.sidebarlink:hover {
+	background-color: #fff;
+}
+
+/*=======map tooltip=====================*/
+#layersmenu {
+	height: 30px;
+	left: 350px;
+	top: 60px;
+	bottom: 0;
+	position: absolute;
+	background: #F5F5F5;
+	box-shadow: 0 0 3px #666;
+	color: #F5F5F5;
+	font-size: 11px;
+	line-height: 16px;
+	z-index: 1;
+	min-width: 600px;
+}
+
+/*===========map canvas==========*/
+#mapcanvas {
+	height: 100%;
+	z-index: 0;
+}
+
+
+/*=======map=====================*/
+#map {
+    height: 700px;
+}
