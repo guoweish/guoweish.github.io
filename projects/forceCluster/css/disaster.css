@@ -1,0 +1,275 @@
+html, body {
+	/*html body 100%是在移动设备中完全拉伸svg的关键！！！*/
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, "Microsoft Hahei", simhei;
+}
+
+/*整体dom容器*/
+#wholeContainer {
+	text-align: center;
+}
+
+/*项目标题*/
+#titleHolder {
+	padding: 20px;
+	color: #444;
+	font-size: 36px;
+	font-weight: bold;
+}
+
+/*单选框*/
+#radioButtonHolder {
+
+}
+
+/*下拉列表容器*/
+#selectHolder {
+	padding: 20px;
+}
+
+/*下拉列表*/
+#selectContainer {
+	width: 200px;
+	height: 35px;
+	text-align: center;
+	color: #999;
+	background-color: white;
+	font-size: 16px;
+	font-family: "Microsoft Hahei", arial, sans-serif;
+	padding-left: 10px;
+	vertical-align: middle;
+}
+
+#svgCanvas {
+	/*fill: #ccc;*/
+}
+
+/*start 标题=====================================*/
+/*季度标题*/
+.titleSeason {
+	text-anchor:middle;
+	/*这里不能用color属性，针对svg中的文字不起作用, use fill instead*/
+	fill: #666;
+	font-size: 14px;
+}
+
+/*年份标题*/
+.titleYear {
+	/*这里不能用color属性，针对svg中的文字不起作用, use fill instead*/
+	fill: #000;
+	font-size: 14px;
+}
+
+/*左侧标题*/
+.titleLeft {
+	/*这里不能用color属性，针对svg中的文字不起作用, use fill instead*/
+	fill: #000;
+	font-size: 14px;
+	/*font-weight: bold;*/
+}
+
+/*顶部标题*/
+.titleTop {
+	/*这里不能用color属性，针对svg中的文字不起作用, use fill instead*/
+	text-anchor:middle;
+	fill: #666;
+	font-size: 14px;
+}
+/*end 标题=====================================*/
+
+/*start 数据点=====================================*/
+/*数据圆点*/
+.dataPoints {
+	fill: darkred;
+	stroke:darkred;
+	/*stroke-width: 2;*/
+	fill-opacity: 0.6;
+}
+
+/*血点图*/
+.blod {
+	opacity: 0.8;
+}
+
+/*高亮选中数据点*/
+.selectedPoint {
+	opacity: 1;
+}
+/*end 数据点=====================================*/
+
+.widgetsLine {
+	stroke:#ccc;
+	stroke-width:.5;
+}
+
+.widgetsBackground {
+	stroke: none;
+	fill: #fff;
+}
+
+.widgetsBackgroundGray {
+	stroke: none;
+	fill: #efefef;
+	fill-opacity: 0.5;
+}
+
+/*start 浮动文本框=====================================*/
+div.mouseTooltip {
+    position: absolute;
+    width: 150px;
+    height: auto;
+    padding: 10px;
+    font-family: 'Microsoft Yahei', SimHei, STHeiti, Arial, sans-serif;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    background-color: black;
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+}
+
+
+#dateTooltip {
+	font-size: 14px;
+	padding-bottom: 5px;
+}
+
+#deathTooltip {
+	font-size: 20px;
+	padding-bottom: 5px;
+}
+
+#placeTooltip {
+	font-size: 14px;
+	font-weight: bold;
+	padding-bottom: 5px;
+}
+
+.lineInTooltip {
+	width: 140px;
+	color: white;
+	size: 0.5px;
+}
+
+#descriptionTooltip {
+	font-size: 12px;
+	padding-bottom: 5px;
+	text-align: left;
+}
+
+#responsible {
+	font-size: 12px;
+	padding-bottom: 5px;
+}
+
+.innerTitleTooltip {
+	font-size: 12px;
+	font-weight: bold;
+}
+/*end 浮动文本框=====================================*/
+
+/*start 地图=====================================*/
+#mapContainer {
+	text-align: center;
+	margin:0 auto;
+	width: 1000px;
+	height: 800px;
+	border-style:solid;
+	border-color: #999;
+	border-width: 1px;
+}
+
+#map {
+	/*position: absolute;*/
+	/*text-align: center;
+	margin:0 auto;*/
+	height: 100%;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#layer {
+    position: fixed;
+    top: 70px;
+    left: 10px;
+    /*bottom: 25px;
+    right: 25px;*/
+    width: 300px;
+    height: 500px;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    font-size: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 5px 5px 5px #ccc;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 1;
+    font-family: "Microsoft Yahei", Helvetica, Arial, sans-serif;
+}
+
+/*地图标点聚合 ====================================*/
+.dead-small {
+	background-color: rgba(243, 112, 34, 0.6); 
+}
+.dead-small div {
+	background-color: rgba(243, 112, 34, 0.6);
+}
+.dead-medium {
+	background-color: rgba(237, 27, 54, 0.6); 
+}
+.dead-medium div {
+	background-color: rgba(237, 27, 54, 0.6);
+}
+.dead-large {
+	background-color: rgba(139, 0, 19, 0.6);  
+}
+.dead-large div {
+	background-color: rgba(139, 0, 19, 0.6);
+}
+
+/*base style =================================*/
+.marker-cluster {
+	background-clip: padding-box;
+	border-radius: 20px;
+}
+.marker-cluster div {
+	width: 30px;
+	height: 30px;
+	margin-left: 5px;
+	margin-top: 5px;
+
+	text-align: center;
+	border-radius: 15px;
+	font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+.marker-cluster span {
+	line-height: 30px;
+}
+/*地图工具栏*/
+#mapMenuContainer {
+	width: 100%;
+	height: 32px;
+	margin: 0;
+}
+#mapMenu {
+	width: 100%;
+	height: 30px;
+	margin: 0;
+	/*overflow: hidden;*/
+	background-color: #F5F5F5;
+	/*position: relative;*/
+	box-shadow: 0 1px 2px #999;
+	z-index: 10;
+	behavior: url(css/PIE.htc);
+}
+/*end 地图=====================================*/
