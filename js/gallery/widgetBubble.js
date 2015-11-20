@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>colorful bubble</title>
-	<script src='../lib/d3.min.js'></script>
-	<style>
-		body{
-			text-align: center;
-		}
-	</style>
-</head>
-<body>
-<script>
-	// global setting=================================
+// global setting=================================
 	var svgWidth = 600,
 		svgHeight = 600;
 
@@ -101,6 +87,3 @@
 			return fillColorScale_no_11_2(i);
 		})
 		.style('fill-opacity', .3);
-</script>
-</body>
-</html>
