@@ -1,0 +1,43 @@
+// global setting=================================
+	var svgWidth = 600,
+		svgHeight = 600;
+
+	var svg = d3.select('body')
+			.select('#vizContainer')
+			.append('svg')
+			.attr('width', svgWidth)
+			.attr('height', svgHeight);
+
+	var no_10 = svg.append('g')
+		.attr('id', 'no_10');
+	// 上半部分半圆个数
+	var num_pie_10 = 8;
+	// 半圆绑定的数据，创建半圆
+	var data_pie_no_10 = [1, 0];
+	// 上半部分半圆各自半径
+	var data_r_no_10 = d3.range(num_pie_10).map(function(i) { return 140 + (i * 20);});
+
+	data_r_no_10.forEach(function(d, j) {
+		var pieLayout = d3.layout.pie().sort(function(k) {
+				return k.id; //根据id排序，保持扇型按数据先后顺序排列
+			})
+			.startAngle(- Math.PI / 2 -(Math.PI/10)*j)
+			.endAngle(Math.PI / 2 -(Math.PI/10)*j);
+		var pieData = pieLayout(data_r_no_10);
+		var pieArc = d3.svg.arc();
+		pieArc.outerRadius(d);
+
+		no_10.append('g')
+			.attr('transform', 'translate(300, 300)' )
+			.selectAll('path')
+			.data(pieData)
+			.enter()
+			.append('path')
+			.attr('d', pieArc)
+			.attr('fill', '#fff')
+			.transition()
+			.delay(j * 300)
+			.duration(3000)
+			.style('fill', '#000')
+			.style('fill-opacity', .2);
+	});

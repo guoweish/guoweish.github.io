@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>重大生产安全事故伤亡分析</title>
+	<script src='lib/d3.min.js'></script>
+	<link rel="stylesheet" href="css/disaster.css">
+</head>
+<body>
+	<div id='wholeContainer'>
+		<!-- 标题 -->
+		<div id='titleHolder'>
+			重大生产安全事故伤亡分析
+		</div>
+		<!-- 单选框 -->
+		<div id='radioButtonHolder'>
+			
+		</div>
+		<!-- 下拉列表 -->
+		<div id='selectHolder'>
+			<select id="selectContainer">
+				<option value='area'>按地区显示</option>
+				<option value="season">按季度显示</option>
+				<option value="disasterLevel">按伤亡显示</option>
+			</select>
+		</div>
+		<!-- viz container -->
+		<div id="vizContainer"></div>
+	</div>
+	<script src='src/vizNoMap.js'></script>
+</body>
+</html>
