@@ -57,10 +57,11 @@ a:visited { color: #071831; }
   margin-left: auto;
   width:980px;
 }
-.g80, .g160, .g240, .g320, .g400, .g480, .g560, .g640, .g720, .g800, .g880, .g960 {
+.g80, .g100, .g160, .g240, .g320, .g400, .g480, .g560, .g640, .g720, .g800, .g880, .g960 {
     display: inline;float: left;margin-left: 20px;
 }
 .g80{width:60px;}
+.g100{width:100px;}
 .g160{width:140px;}
 .g240{width:220px;}
 .g320{width:300px;}
