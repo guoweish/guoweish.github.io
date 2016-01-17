@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>a prototype for hongbao viz</title>
+    <!-- <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css"> -->
+    <link rel="stylesheet" href="lib/pagescroll/onepage-scroll.css">
+    <link rel="stylesheet" href="src/hongbao-mobile-pagescroll-desktop.css">
+    <script src='lib/bootstrap/js/jquery-1.12.0.js'></script>
+    <script src='lib/pagescroll/jquery.onepage-scroll.js'></script>
+    <!-- <script src="lib/bootstrap/js/bootstrap.js"></script> -->
+    <!-- <script src="lib/vue.js"></script> -->
+	<script src="lib/d3.js"></script>
+    <style media="screen">
+        /*.pageContainer {
+            padding-top: 60px;
+        }*/
+    </style>
+</head>
+<body>
+    <!-- ################################################################
+	### start nav
+	################################################################ -->
+	<div id='navBar'>
+	    <div class="logo">
+            <div class="orangeBox"></div>
+            <div class="grayBox"></div>
+            <div class="titleBox">TheNews</div>
+	    </div>
+	</div>
+	<!-- ### end nav ############################################### -->
+
+    <!-- ################################################################
+	### page container start
+	################################################################ -->
+    <div class="main">
+        <section class="pageContainer page_1" >
+            <div id="vizContainer-1" class='vizContainer'></div>
+            <!-- <div class="description">
+                <div class="wordBox">
+                    <p>
+                        南山经之首曰鹊山。其首曰招摇之山，临于西海之上。多桂多金玉。有草焉，其状如韭而青华，其名曰祝馀，食之不饥。有木焉，其状如榖而黑理，其华四照。其名曰迷榖，佩之不迷。有兽焉，其状如禺而白耳，伏行人走，其名曰狌狌，食之善走。丽𪊨之水出焉，而西流注于海，其中多育沛，佩之无瘕疾。
+                    </p>
+                    <p>
+                        又东三百七十里曰杻阳之山。其阳多赤金。其阴多白金。有兽焉，其状如马而白首，其文如虎而赤尾，其音如谣，其名曰鹿蜀，佩之宜子孙。怪水出焉，而东流注于宪翼之水。其中多玄鱼，其状如龟而鸟首虺尾，其名曰旋龟，其音如判木，佩之不聋，可以为底。
+                    </p>
+                    <p>
+                        又东三百里曰青丘之山。其阳多玉，其阴多青[青护-言]。有兽焉，其状如狐而九尾，其音如婴儿，能食人，食者不蛊。有鸟焉，其状如鸠，其音如呵，名曰灌灌，佩之不惑。英水出焉，南流注于即翼之泽。其中多赤鱬,其状如鱼而人面，其音如鸳鸯，食之不疥。
+                    </p>
+                </div>　
+            </div> -->
+        </section>
+
+        <section class="pageContainer page_2">
+            <div id="vizContainer-2"></div>
+        </section>
+
+        <section class="pageContainer page_3">
+            <div id="vizContainer-3"></div>
+        </section>
+    </div>
+    <!-- ### end container start  ############################################### -->
+
+    <script src='src/hongbao-mobile-pagescroll-desktop.js'></script>
+</body>
+</html>
