@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="renderer" content="webkit">
+    <title>企业征信可视化网络图</title>
+  </head>
+  <body>
+    <Navbtp></Navbtp>
+    <!-- <Containerbtp></Containerbtp> -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 sidebar">
+                <div id="sidepanel">
+                    <!-- <div id="legend">
+                        图例
+                    </div> -->
+                    <!-- =========================================================
+                    ========================================================= -->
+                    <div id='userHints' class="alert alert-warning alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>小提示：</strong>鼠标点击圆点并拖动可以固定位置.
+                    </div>
+
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                      <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                          <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              高风险企业名单
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                          <div class="panel-body">
+                            Hello World
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                          <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              中等风险企业名单
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                          <div class="panel-body">
+                            Hello World
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                          <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                               低风险企业名单
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                          <div class="panel-body">
+                            Hello World
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- =========================================================
+                    ========================================================= -->
+                    <div id="nodeTypeFilterOption">
+                        <!-- <span>数据筛选</span> -->
+                            <!-- <select class="form-control" v-model="selectedNodesType">
+                                <option v-for="type in initialNodesTypes"  v-bind:value="type" >{{ menuKeyNameList[type]}}
+                                </option>
+                            </select> -->
+                            <select class="form-control" v-model="selectedNodesType">
+                                <!-- <option v-for="type in initialNodesTypes"  v-bind:value="type" >{{ menuKeyNameList[type]}}
+                                </option> -->
+                                <option selected  value="All">全部节点</option>
+                                <option  value="Company">公司节点</option>
+                                <option  value="Person">个人节点</option>
+                            </select>
+                    </div>
+                    <!-- =========================================================
+                    ========================================================= -->
+                    <div id="filter">
+                        <!-- 筛选查看 -->
+                        <ul id="checkboxes">
+                            <!-- <li class="relationTypeCheckbox" v-for='type in initialRelationsTypes'>
+                                    <input type="checkbox" v-bind:value="type" v-model="selectedStatus.selectedLinksTypeList">
+                                    <label>{{menuKeyNameList[type]}}</label>
+                            </li> -->
+                            <li class="relationTypeCheckbox" v-for='type in getLinksTypeCheckboxesKeys'>
+                                    <input type="checkbox" v-bind:value="type" v-model="selectedStatus.selectedLinksTypeList">
+                                    <label>{{menuKeyNameList[type]}}</label>
+                            </li>
+                        </ul>
+                        <!-- <span>{{selectedStatus.selectedLinksTypeList | json}}</span> -->
+                    </div>
+                    <!-- <div class="updateButtonContainer">
+						<button type="button" class="btn btn-default" @click='updateGraph'>筛选数据</button>
+	                </div> -->
+
+                    <div class="updateButtonContainer">
+						<button type="button" class="btn btn-default" @click='updateFiltedGraph'>筛选数据</button>
+	                </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 col-lg-10 col-lg-offset-2 main">
+				<div id="vizContainer"></div>
+			</div>
+        </div>
+    </div>
+    <!-- <div id="vizContainer"></div> -->
+    <script src="dist/build.js"></script>
+  </body>
+</html>
