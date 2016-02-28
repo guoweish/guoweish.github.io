@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="renderer" content="webkit">
+    <title>企业征信可视化网络图</title>
+  </head>
+  <body>
+    <Navbtp></Navbtp>
+    <!-- <Containerbtp></Containerbtp> -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 sidebar">
+                <div id="sidepanel">
+                    <!-- <div id="legend">
+                        图例
+                    </div> -->
+                    <!-- =========================================================
+                    ========================================================= -->
+                    <div id='userHints' class="alert alert-warning alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>小提示：</strong>拖动圆点，可以固定在新位置
+                    </div>
+
+                    <!-- start filter board=========================================================
+                    ========================================================= -->
+                    <div id="filterBoard">
+                        <!-- =========================================================
+                        ========================================================= -->
+                        <div id="filterBoardTitle">筛选</div>
+                        <div id="nodeTypeFilterOption">
+                            <!-- <span>数据筛选</span> -->
+                                <!-- <select class="form-control" v-model="selectedNodesType">
+                                    <option v-for="type in initialNodesTypes"  v-bind:value="type" >{{ menuKeyNameList[type]}}
+                                    </option>
+                                </select> -->
+                                <select class="form-control" v-model="selectedNodesType">
+                                    <!-- <option v-for="type in initialNodesTypes"  v-bind:value="type" >{{ menuKeyNameList[type]}}
+                                    </option> -->
+                                    <option selected  value="All">全部节点</option>
+                                    <option  value="Company">公司节点</option>
+                                    <option  value="Person">个人节点</option>
+                                </select>
+                        </div>
+                        <!-- =========================================================
+                        ========================================================= -->
+                        <div id="filter">
+                            <!-- 筛选查看 -->
+                            <ul id="checkboxes">
+                                <!-- <li class="relationTypeCheckbox" v-for='type in initialRelationsTypes'>
+                                        <input type="checkbox" v-bind:value="type" v-model="selectedStatus.selectedLinksTypeList">
+                                        <label>{{menuKeyNameList[type]}}</label>
+                                </li> -->
+                                <li class="relationTypeCheckbox" v-for='type in getLinksTypeCheckboxesKeys'>
+                                        <input type="checkbox" v-bind:value="type" v-model="selectedStatus.selectedLinksTypeList">
+                                        <label>{{menuKeyNameList[type]}}</label>
+                                </li>
+                            </ul>
+                            <!-- <span>{{selectedStatus.selectedLinksTypeList | json}}</span> -->
+                        </div>
+                        <!-- =========================================================
+                        ========================================================= -->
+                        <!-- <div class="updateButtonContainer">
+    						<button type="button" class="btn btn-default" @click='updateGraph'>筛选数据</button>
+    	                </div> -->
+                        <div id="updateButtonContainer">
+    						<button type="button" @click='updateFiltedGraph'>筛选数据</button>
+    	                </div>
+                        <!-- =========================================================
+                        ========================================================= -->
+                    </div>
+                    <!-- end filter board =========================================================
+                    ========================================================= -->
+
+                    <!-- start 风险提示 =========================================================
+                    ========================================================= -->
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div id="riskBoardTitle">风险预警</div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h5 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    高风险企业
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <table class="riskinfo table table-condensed">
+                                        <tr>
+                                            <td>
+                                                上海海通证券有限公司
+                                            </td>
+                                            <td>
+                                                中等风险
+                                            </td>
+                                            <td>
+                                                <span class="badge nomarlRisk">5</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                上海光明乳业有限公司
+                                            </td>
+                                            <td>
+                                                中等风险
+                                            </td>
+                                            <td>
+                                                <span class="badge highRisk">1</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                e租宝
+                                            </td>
+                                            <td>
+                                                中等风险
+                                            </td>
+                                            <td>
+                                                <span class="badge lowRisk">2.5</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                上海光明乳业有限公司
+                                            </td>
+                                            <td>
+                                                中等风险
+                                            </td>
+                                            <td>
+                                                <span class="badge">3</span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h5 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                    中等风险企业
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    测试
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h5 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    低风险企业
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                Hello World
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end 风险提示 =========================================================
+                    ========================================================= -->
+
+
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 col-lg-9 col-lg-offset-3 main">
+				<div id="vizContainer"></div>
+			</div>
+        </div>
+    </div>
+    <!-- <div id="vizContainer"></div> -->
+    <script src="dist/build.js"></script>
+  </body>
+</html>
