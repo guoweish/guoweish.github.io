@@ -1,0 +1,26 @@
+{
+    "nodes": [
+        { "name": "b", "label": "company"},
+        { "name": "b11", "label": "company" },
+        { "name": "b12", "label": "person" },
+        { "name": "b13", "label": "person" },
+        { "name": "b14", "label": "person" },
+        { "name": "b15", "label": "person" },
+        { "name": "b16", "label": "person" },
+        { "name": "b17", "label": "person" },
+        { "name": "b18", "label": "person" }
+    ],
+    "links": [
+        { "source": "b", "target": "b11", "linkId": "b-b11", "linkDesc": "invest" },
+        { "source": "b12", "target": "b", "linkId": "b-b12-0", "linkDesc": "invest" },
+        { "source": "b12", "target": "b", "linkId": "b-b12-1", "linkDesc": "job" },
+        { "source": "b13", "target": "b", "linkId": "b-b13-0", "linkDesc": "invest" },
+        { "source": "b13", "target": "b", "linkId": "b-b13-1", "linkDesc": "job" },
+        { "source": "b13", "target": "b", "linkId": "b-b13-2", "linkDesc": "relative" },
+        { "source": "b14", "target": "b", "linkId": "b-b14", "linkDesc": "invest" },
+        { "source": "b15", "target": "b", "linkId": "b-b15", "linkDesc": "invest" },
+        { "source": "b16", "target": "b", "linkId": "b-b16", "linkDesc": "invest" },
+        { "source": "b17", "target": "b", "linkId": "b-b17", "linkDesc": "invest" },
+        { "source": "b18", "target": "b", "linkId": "b-b18", "linkDesc": "invest" }
+    ]
+}
