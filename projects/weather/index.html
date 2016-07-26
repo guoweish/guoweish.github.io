@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>天气大数据可视化-郭不耐</title>
+    <style media="screen">
+        body {
+            background-color: #000;
+        }
+
+        .spinner {
+            /*margin: 30px auto;*/
+            margin-top: 200px;
+            margin-right: auto;
+            margin-bottom: 30px;
+            margin-left: auto;
+            width: 50px;
+            height: 30px;
+            text-align: center;
+            font-size: 10px;
+        }
+
+        .spinner > div {
+            /*background-color: #67CF22;*/
+            background-color: #DACE00;
+            height: 100%;
+            width: 6px;
+            display: inline-block;
+
+            -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+            animation: stretchdelay 1.2s infinite ease-in-out;
+        }
+
+        .spinner .rect2 {
+            -webkit-animation-delay: -1.1s;
+            animation-delay: -1.1s;
+        }
+
+        .spinner .rect3 {
+            -webkit-animation-delay: -1.0s;
+            animation-delay: -1.0s;
+        }
+
+        .spinner .rect4 {
+            -webkit-animation-delay: -0.9s;
+            animation-delay: -0.9s;
+        }
+
+        .spinner .rect5 {
+            -webkit-animation-delay: -0.8s;
+            animation-delay: -0.8s;
+        }
+
+        @-webkit-keyframes stretchdelay {
+            0%, 40%, 100% { -webkit-transform: scaleY(0.4) }
+            20% { -webkit-transform: scaleY(1.0) }
+        }
+
+        @keyframes stretchdelay {
+            0%, 40%, 100% {
+            transform: scaleY(0.4);
+            -webkit-transform: scaleY(0.4);
+            }  20% {
+            transform: scaleY(1.0);
+            -webkit-transform: scaleY(1.0);
+            }
+        }
+
+        .loadDesc {
+            text-align: center;
+            font-size: 12px;
+            font-family: 'Microsoft Yahei';
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <!-- 载入动画 -->
+    <div id="loader">
+        <div class="spinner">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
+        </div>
+        <div class="loadDesc">
+            正在载入，请稍候...
+        </div>
+    </div>
+
+    <app></app>
+    <script src="./dist/build.js"></script>
+</body>
+</html>
