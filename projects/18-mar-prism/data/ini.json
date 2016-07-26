@@ -1,0 +1,9 @@
+{
+    "nodes": [
+        { "name": "a", "label": "company"},
+        { "name": "b", "label": "company"}
+    ],
+    "links": [
+
+    ]
+}

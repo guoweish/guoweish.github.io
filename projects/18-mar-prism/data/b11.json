@@ -1,0 +1,13 @@
+{
+    "nodes": [
+        { "name": "b11", "label": "company" },
+        { "name": "b21", "label": "company" },
+        { "name": "b22", "label": "company" },
+        { "name": "b23", "label": "company" }
+    ],
+    "links": [
+        { "source": "b11", "target": "b21", "linkId": "b11-b21", "linkDesc": "invest" },
+        { "source": "b11", "target": "b22", "linkId": "b11-b22", "linkDesc": "invest" },
+        { "source": "b11", "target": "b23", "linkId": "b11-b23", "linkDesc": "invest"}
+    ]
+}

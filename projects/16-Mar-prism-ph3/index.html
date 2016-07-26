@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="renderer" content="webkit">
+    <title>企业征信可视化网络图</title>
+  </head>
+  <body>
+    <Navbtp></Navbtp>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 sidebar">
+                <div id="sidepanel">
+                    <!-- 功能提示栏 -->
+                    <Hints></Hints>
+                    <!-- 数据筛选 -->
+                    <div id="filterBoard">
+                        <Datafilter :selected-Status='selectedStatus' :check-Keys='getLinksTypeCheckboxesKeys' :menu-Key-Name-List='menuKeyNameList'></Datafilter>
+                    </div>
+                    <!--风险提示 -->
+                    <Risktable :risk-Info='riskInfo'></Risktable>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 col-lg-9 col-lg-offset-3 main">
+				<div id="vizContainer"></div>
+			</div>
+        </div>
+    </div>
+    <script src="dist/build.js"></script>
+  </body>
+</html>
