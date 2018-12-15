@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>draw line in webgl canvas</title>
+    <style type="text/css">
+      body {
+        background: black;
+        margin: 0px;
+        padding: 0px;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+
+  <body onload="main()">
+    <canvas id="example" width="400" height="400">
+      Please use a browser that supports "canvas"
+    </canvas>
+    <script src="../lib/webgl-utils.js"></script>
+    <script src="../lib/webgl-debug.js"></script>
+    <script src="../lib/cuon-utils.js"></script>
+    <script src="../lib/cuon-matrix.js"></script>
+    <script src="mandelbrot.js"></script>
+
+    <script id="vertexShader" type="x-shader/x-vertex">#version 300 es
+      in vec3 a_Position;
+      in vec2 a_Uv;
+      out vec2 v_Uv;
+
+      void main()	{
+        v_Uv = a_Uv;
+				gl_Position = vec4(a_Position, 1.0);
+			}
+    </script>
+
+    <script id="fragmentShader" type="x-shader/x-fragment">#version 300 es
+      precision highp float;
+
+      uniform float u_MaxIterations;
+      uniform float u_Zoom;
+      uniform float u_Xcenter;
+      uniform float u_Ycenter;
+      // uniform float u_InnerColor_1;
+      // uniform float u_InnerColor_2;
+      // uniform float u_OutColor_1;
+      // uniform float u_OutColor_2;
+      uniform float u_HwRatio;
+
+      in vec2 v_Uv;
+      out vec4 fragColor;
+
+      const vec3 u_InnerColor_1 = vec3(0.9, 0.9, 0.9);
+      const vec3 u_InnerColor_2 = vec3(0.3, 0.3, 0.3);
+      const vec3 u_OutColor_2 = vec3(0.0, 0.0, 0.0);
+      const vec3 u_OutColor_1 = vec3(1.0, 1.0, 1.0);
+
+      void main()	{
+        vec2 st = v_Uv;
+        st.x /= u_HwRatio;
+
+        float real = st.x * u_Zoom + u_Xcenter;
+        float imag = st.y * u_Zoom + u_Ycenter;
+
+        float Creal = real;
+        float Cimag = imag;
+
+        float r2 = 0.0;
+        float iter;
+
+        for (iter = 0.0; iter < u_MaxIterations && r2 < 4.0; ++iter) {
+          float tempReal = real;
+          real = (tempReal * tempReal) - (imag * imag) + Creal;
+          imag = 2.0 * tempReal * imag + Cimag;
+          r2 = (real * real) + (imag * imag);
+        }
+
+        vec3 color;
+
+        if (r2 < 4.0) {
+          color = mix(u_InnerColor_1, u_InnerColor_2, fract(sqrt(r2)));
+        } else {
+          color = mix(u_OutColor_1, u_OutColor_2, fract(iter * 0.05));
+        }
+
+        fragColor = vec4(color, 1.0);
+			}
+    </script>
+  </body>
+</html>
